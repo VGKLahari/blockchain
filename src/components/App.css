@@ -1,1 +1,8 @@
 /* Styles go here */
+.container {
+    position: relative; 
+    top:60px;
+    /* Maximum width */
+    margin: 0 auto; /* Center it */
+  }
+  
