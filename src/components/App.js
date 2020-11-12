@@ -3,6 +3,9 @@ import Web3 from 'web3';
 import './App.css';
 import Meme from '../abis/Meme.json';
 import exam from './exam.jpg'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import admin from './admin';
+import home from './home';
 
 
 const ipfsClient = require('ipfs-http-client')
@@ -85,36 +88,21 @@ class App extends Component {
 
   render() {
     return (
-      <div >
+  
+        <div className="App">
+          <Router>
+            
+            <Switch>
+              <Route exact path="/" component={home} />
+              <Route exact path="/admin" component={admin} />
         
-      
-      <nav class="navbar navbar-dark bg-primary navbar-expand-lg ">
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav w-100 nav justify-content-end">
-        <li class="nav-item active">
-            <a class="nav-link" href="#"><b>Admin</b> <span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><b>Teacher</b> <span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><b>Superintendent</b> <span class="sr-only">(current)</span></a>
-          </li>
-        
-        
-        </ul>
-      </div>
-    </nav>
-   <div class="container">
-      <center> <h1><b>EXAM PAPER MANAGEMENT PORTAL</b></h1> </center> 
-      
-    </div>
-    </div>
+            </Switch>
+           
+          </Router>
+        </div>
+      );
     
-    );
+  
   }
 }
 
